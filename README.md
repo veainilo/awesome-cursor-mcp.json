@@ -1,10 +1,12 @@
 # Awesome Cursor MCP
 
-一个用于增强[Cursor编辑器](https://cursor.sh/)功能的模型上下文协议(Model Context Protocol)配置集合。
+一个用于增强[Cursor编辑器](https://cursor.sh/)功能的[模型上下文协议(Model Context Protocol)](https://docs.cursor.com/context/model-context-protocol)配置集合。
 
 ## 📖 简介
 
-这个仓库提供了一个预配置的mcp.json文件，可以扩展Cursor编辑器的AI能力，使其能够与浏览器交互、执行顺序思考，以及使用Playwright进行自动化测试。
+模型上下文协议(MCP)是一个开放协议，用于标准化应用程序如何向LLM提供上下文和工具。你可以将MCP视为Cursor的插件系统，它允许通过标准接口将Agent连接到各种数据源和工具，从而扩展其能力。
+
+本仓库提供了预配置的MCP服务器配置，可以扩展Cursor编辑器的AI能力，使其能够与浏览器交互、执行顺序思考，以及使用Playwright进行自动化测试。
 
 ## 🛠️ 包含的MCP服务
 
@@ -36,14 +38,27 @@
 
 ## 🚀 使用方法
 
-1. 将此仓库中的`mcp.json`文件复制到你的Cursor配置目录：
-   - Windows: `%APPDATA%\Cursor\config\`
-   - macOS: `~/Library/Application Support/Cursor/config/`
-   - Linux: `~/.config/Cursor/`
-2. 启动Cursor编辑器，确保AI功能已启用。
-3. 开始使用增强后的AI功能进行开发。
+MCP配置可以放在两个位置，取决于你的使用场景：
+
+### 全局配置（推荐）
+
+如果你想在所有项目中使用这些工具，将`mcp.json`复制到Cursor的全局配置目录：
+- Windows: `%APPDATA%\Cursor\config\mcp.json`
+- macOS: `~/Library/Application Support/Cursor/config/mcp.json`
+- Linux: `~/.config/Cursor/mcp.json`
+
+### 项目配置
+
+如果只想在特定项目中使用，将`mcp.json`复制到项目的`.cursor`目录：
+`.cursor/mcp.json`
+
+配置完成后：
+1. 重启Cursor编辑器，确保AI功能已启用
+2. 在AI聊天中直接引用这些工具的功能（例如："检查当前页面的控制台错误"）
 
 ## 🔧 配置文件详解
+
+这个MCP配置使用stdio传输类型，Cursor会自动运行这些进程：
 
 ```json
 {
@@ -81,7 +96,7 @@
 
 ## 📋 前提条件
 
-- 安装了Cursor编辑器
+- 安装了[Cursor编辑器](https://cursor.sh/)
 - Node.js环境（用于运行NPM包）
 - 如使用Playwright功能，需要安装相关浏览器驱动
 
@@ -91,4 +106,9 @@
 
 ## 📜 许可证
 
-MIT 
+MIT
+
+## 🔗 相关资源
+
+- [官方MCP文档](https://docs.cursor.com/context/model-context-protocol)
+- [Cursor文档](https://docs.cursor.com/) 
