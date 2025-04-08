@@ -4,7 +4,7 @@
 
 ## 📖 简介
 
-这个仓库包含了预配置的MCP服务器配置，可以扩展Cursor编辑器的AI能力，使其能够与浏览器交互、执行顺序思考，以及使用Playwright进行自动化测试。
+这个仓库提供了一个预配置的mcp.json文件，可以扩展Cursor编辑器的AI能力，使其能够与浏览器交互、执行顺序思考，以及使用Playwright进行自动化测试。
 
 ## 🛠️ 包含的MCP服务
 
@@ -36,7 +36,10 @@
 
 ## 🚀 使用方法
 
-1. 在Cursor编辑器中，将此`mcp.json`文件复制到你的项目根目录。
+1. 将此仓库中的`mcp.json`文件复制到你的Cursor配置目录：
+   - Windows: `%APPDATA%\Cursor\config\`
+   - macOS: `~/Library/Application Support/Cursor/config/`
+   - Linux: `~/.config/Cursor/`
 2. 启动Cursor编辑器，确保AI功能已启用。
 3. 开始使用增强后的AI功能进行开发。
 
