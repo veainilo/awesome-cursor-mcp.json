@@ -1,0 +1,37 @@
+# 依赖目录
+node_modules/
+.npm
+.yarn
+
+# 日志文件
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 运行时数据
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# 测试覆盖率目录
+coverage/
+.nyc_output
+
+# 构建输出
+dist/
+build/
+
+# 环境变量文件
+.env
+.env.*
+!.env.example
+
+# IDE和编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store 

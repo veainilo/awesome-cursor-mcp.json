@@ -1,0 +1,31 @@
+{
+    "mcpServers": {
+        "browser-tools-mcp": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@agentdeskai/browser-tools-mcp"
+            ]
+        },
+        "sequential-thinking": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-sequential-thinking"
+            ]
+        },
+        "playwright-mcp-server": {
+            "command": "cmd",
+            "args": [
+                "/c",
+                "npx",
+                "-y",
+                "@smithery/cli@latest",
+                "run",
+                "@showfive/playwright-mcp-server",
+                "--key",
+                "5ed3768e-aba6-4c41-8ecb-6b31ceed935f"
+            ]
+        }
+    }
+}
