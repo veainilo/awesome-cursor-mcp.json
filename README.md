@@ -40,16 +40,26 @@
 
 MCP配置可以放在两个位置，取决于你的使用场景：
 
+### 操作系统差异
+
+本仓库提供了两个配置文件版本：
+
+- `mcp.json` - 适用于Mac和Linux系统
+- `win_mcp.json` - 适用于Windows系统
+
+**请根据您的操作系统选择正确的配置文件**。Windows系统请使用`win_mcp.json`，Mac和Linux系统请使用`mcp.json`。
+
 ### 全局配置（推荐）
 
-如果你想在所有项目中使用这些工具，将`mcp.json`复制到Cursor的全局配置目录：
-- Windows: `%APPDATA%\Cursor\config\mcp.json`
-- macOS: `~/Library/Application Support/Cursor/config/mcp.json`
-- Linux: `~/.config/Cursor/mcp.json`
+如果你想在所有项目中使用这些工具，将适合你操作系统的配置文件复制到Cursor的全局配置目录：
+
+- Windows: `%APPDATA%\Cursor\config\mcp.json`（复制`win_mcp.json`内容）
+- macOS: `~/Library/Application Support/Cursor/config/mcp.json`（使用`mcp.json`）
+- Linux: `~/.config/Cursor/mcp.json`（使用`mcp.json`）
 
 ### 项目配置
 
-如果只想在特定项目中使用，将`mcp.json`复制到项目的`.cursor`目录：
+如果只想在特定项目中使用，将适合你操作系统的配置文件复制到项目的`.cursor`目录：
 `.cursor/mcp.json`
 
 配置完成后：
@@ -58,7 +68,11 @@ MCP配置可以放在两个位置，取决于你的使用场景：
 
 ## 🔧 配置文件详解
 
-这个MCP配置使用stdio传输类型，Cursor会自动运行这些进程：
+这些MCP配置使用stdio传输类型，Cursor会自动运行这些进程。
+
+### Windows配置 (win_mcp.json)
+
+Windows版本使用`cmd`和`/c`参数来执行命令：
 
 ```json
 {
@@ -82,6 +96,42 @@ MCP配置可以放在两个位置，取决于你的使用场景：
             "args": [
                 "/c",
                 "npx",
+                "-y",
+                "@smithery/cli@latest",
+                "run",
+                "@showfive/playwright-mcp-server",
+                "--key",
+                "5ed3768e-aba6-4c41-8ecb-6b31ceed935f"
+            ]
+        }
+    }
+}
+```
+
+### Mac/Linux配置 (mcp.json)
+
+Mac和Linux版本直接使用`npx`命令，无需`cmd`和`/c`参数：
+
+```json
+{
+    "mcpServers": {
+        "browser-tools-mcp": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@agentdeskai/browser-tools-mcp"
+            ]
+        },
+        "sequential-thinking": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-sequential-thinking"
+            ]
+        },
+        "playwright-mcp-server": {
+            "command": "npx",
+            "args": [
                 "-y",
                 "@smithery/cli@latest",
                 "run",

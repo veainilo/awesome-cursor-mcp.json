@@ -15,8 +15,10 @@
             ]
         },
         "playwright-mcp-server": {
-            "command": "npx",
+            "command": "cmd",
             "args": [
+                "/c",
+                "npx",
                 "-y",
                 "@smithery/cli@latest",
                 "run",
