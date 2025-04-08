@@ -154,10 +154,6 @@ Mac和Linux版本直接使用`npx`命令，无需`cmd`和`/c`参数：
 
 欢迎提交问题和拉取请求，共同改进这个MCP配置集合。
 
-## 📜 许可证
-
-MIT
-
 ## 🔗 相关资源
 
 - [官方MCP文档](https://docs.cursor.com/context/model-context-protocol)
